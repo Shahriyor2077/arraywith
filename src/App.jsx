@@ -2,8 +2,6 @@
 import AppRouter from './pages'
 
 const App = () => {
-
-  
   return (<AppRouter/>)
 }
 

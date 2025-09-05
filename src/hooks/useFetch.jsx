@@ -7,24 +7,14 @@ export const useFetch = (endpoint) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!endpoint) {
-      setLoading(false);
-      return;
-    }
-    
     setLoading(true);
     setError(null);
     setData(null);
     
     api
       .get(endpoint)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.error('API Error:', err);
-        setError(err);
-      })
+      .then((res) => setData(res.data))
+      .catch((err) => setError(err))
       .finally(() => setLoading(false));
   }, [endpoint]);
 
