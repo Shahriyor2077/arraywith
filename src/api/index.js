@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    // baseURL: "http://localhost:3000",
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_URL || "https://jsonplaceholder.typicode.com",
 })
 
 // api.interceptors.request.use((config)=>{
