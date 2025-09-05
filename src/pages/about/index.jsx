@@ -6,11 +6,11 @@ const About = () => {
 
 
   return (
-    <div className='p-4'>
-        {loading && <div>Loading...</div>}
-        {error && <div>Error: {error.message}</div>}
+    <div className="p-4">
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
       <h2>Posts</h2>
-      <PostsView data={data} />
+      <PostsView data={data || [] } />
     </div>
   );
 };
