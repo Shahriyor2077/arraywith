@@ -3,13 +3,13 @@ import FoodView from '../../components/FoodView'
 
 const Home = () => {
   const {data, error, loading} = useFetch("/users")
-  if(loading)return <p>Loading...</p>
-  if(error)return <p>Error: {error.message}</p>
   
   return (
-    <div className='p-4 '>
-      <h2>Home</h2>
-      <FoodView data={data || []}/>
+    <div className="p-6">
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Foydalanuvchilar</h2>
+      {loading && <div className="text-center text-blue-600">Yuklanmoqda...</div>}
+      {error && <div className="text-center text-red-500">Xatolik: {error.message}</div>}
+      <FoodView data={data}/>
     </div>
   )
 }

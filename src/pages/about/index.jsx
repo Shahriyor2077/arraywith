@@ -4,13 +4,12 @@ import PostsView from "../../components/PostsView";
 const About = () => {
   const { data, loading, error } = useFetch("/posts");
 
-
   return (
-    <div className="p-4">
-      {loading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
-      <h2>Posts</h2>
-      <PostsView data={data || [] } />
+    <div className="p-6">
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Postlar</h2>
+      {loading && <div className="text-center text-blue-600">Yuklanmoqda...</div>}
+      {error && <div className="text-center text-red-500">Xatolik: {error.message}</div>}
+      <PostsView data={data} />
     </div>
   );
 };
