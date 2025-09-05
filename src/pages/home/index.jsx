@@ -4,11 +4,34 @@ import FoodView from '../../components/FoodView'
 const Home = () => {
   const {data, error, loading} = useFetch("/users")
   
+  if (loading) {
+    return (
+      <div className="p-6">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Foydalanuvchilar</h2>
+        <div className="flex items-center justify-center py-12">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-blue-600 text-lg">Ma'lumotlar yuklanmoqda...</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  
+  if (error) {
+    return (
+      <div className="p-6">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Foydalanuvchilar</h2>
+        <div className="text-center text-red-500 py-12">
+          <p className="text-xl">Xatolik: {error.message}</p>
+        </div>
+      </div>
+    )
+  }
+  
   return (
     <div className="p-6">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Foydalanuvchilar</h2>
-      {loading && <div className="text-center text-blue-600">Yuklanmoqda...</div>}
-      {error && <div className="text-center text-red-500">Xatolik: {error.message}</div>}
       <FoodView data={data}/>
     </div>
   )
