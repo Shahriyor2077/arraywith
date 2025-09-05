@@ -5,6 +5,7 @@ import Login from "./login"
 import MainLayout from './layout'
 import ProductDetail from './product-detail'
 import About from './about'
+import PostDetail from './post-detail'
 const AppRouter = () => {
   return (
     <React.Fragment>
@@ -12,6 +13,7 @@ const AppRouter = () => {
             <Route path='/' element={<MainLayout/>}>
               <Route path='/' element={<Home/>}/>
               <Route path='/posts' element={<About/>}/>
+              <Route path='/post/:id' element={<PostDetail/>}/>
               <Route path='/product/:id' element={<ProductDetail/>}/>
               <Route path='*' element={<div>404</div>}/>
             </Route>
