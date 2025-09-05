@@ -1,0 +1,5 @@
+[33md47ca00[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Complete project optimization and fix all issues - Fixed loading states in Home and About pages - Removed console.log from App.jsx - Enhanced FoodView and PostsView with better loading animations - Added empty state handling for both components - Improved UI consistency across all pages - All components now have proper error handling and loading states - Build tested and working perfectly
+[33me715224[m Fix all deployment issues and prepare for production - Added missing PostDetail component and route - Fixed routing issues for post detail pages - Removed console.log statements - Optimized Vite config for production build - Fixed build process with esbuild minifier - Added proper error handling and loading states - All components now have proper null checks
+[33m444f90d[m m
+[33m734d043[m .
+[33me21b2df[m .
